@@ -49,6 +49,6 @@
       "node": true
     }
   },
-  "repository": "https://toolbarthomas@github.com/toolbarthomas/totem.git",
+  "repository": "https://github.com/toolbarthomas/generator-totem",
   "license": "MIT"
 }
