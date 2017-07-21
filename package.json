@@ -1,7 +1,7 @@
 {
   "name": "generator-totem",
-  "version": "0.1.0",
-  "description": "Default generator for Totem based projects",
+  "version": "0.4.0",
+  "description": "Default generator for Totem projects",
   "homepage": "",
   "author": {
     "name": "Thomas van der Velde",
@@ -14,7 +14,7 @@
   "main": "generators/index.js",
   "keywords": [
     "yeoman-generator",
-    "yeoman-generator"
+    "totem"
   ],
   "devDependencies": {
     "yeoman-test": "^1.6.0",
