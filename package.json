@@ -24,7 +24,7 @@
     "jest-cli": "^20.0.4",
     "nsp": "^2.6.3",
     "path": "^0.12.7",
-    "replace": "^0.3.0",
+    "replace-in-file": "^2.5.3",
     "yeoman-assert": "^3.0.0",
     "yeoman-test": "^1.7.0"
   },

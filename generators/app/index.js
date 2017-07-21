@@ -3,7 +3,7 @@ const Generator = require('yeoman-generator');
 const Chalk = require('chalk');
 const fse = require('fs-extra');
 const path = require('path');
-const replace = require('replace');
+const replace = require('replace-in-file');
 
 const Basepath = './src/resources';
 
@@ -26,11 +26,10 @@ class Totem extends Generator {
                     var file = src + '/index.twig';
 
                     replace({
-                        regex: "__PAGE__",
-                        replacement: name,
-                        paths: [file],
-                        recursive: true,
-                        silent: true,
+                        from: [/__PAGE__/g],
+                        to: name,
+                        files: [file],
+                        encoding: 'utf8'
                     });
                 }
                 break;
