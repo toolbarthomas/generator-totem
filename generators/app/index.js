@@ -3,7 +3,7 @@ const Generator = require('yeoman-generator');
 const Chalk = require('chalk');
 const fse = require('fs-extra');
 const path = require('path');
-const replace = require("replace");
+const replace = require('replace');
 
 const Basepath = './src/resources';
 
