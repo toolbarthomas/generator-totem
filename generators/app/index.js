@@ -3,7 +3,7 @@ const Generator = require('yeoman-generator');
 const Chalk = require('chalk');
 const fse = require('fs-extra');
 const path = require('path');
-const replace = require('replace');
+const replace = require("replace");
 
 const Basepath = './src/resources';
 
@@ -55,7 +55,6 @@ class Totem extends Generator {
         return output_config;
     }
 }
-
 module.exports = class extends Totem  {
   prompting() {
     this.log('');
