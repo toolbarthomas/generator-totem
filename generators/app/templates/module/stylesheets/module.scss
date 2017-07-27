@@ -1,5 +1,13 @@
 @charset "UTF-8";
 
+// __MODULE__ Module
+//
+// This file is used to generate a seperate stylesheet for your module
+// Please don't remove _globbing-fix.scss because that file is used to prevent the sass
+// error when we don't have any subfiles for our module
+
+@import "__globbing-fix";
+
 @import "shared/**";
 @import "helpers/**";
 @import "settings/**";

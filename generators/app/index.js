@@ -23,12 +23,14 @@ class Totem extends Generator {
                     'javascripts/page.js'
                 ];
                 output_config['callback'] = function(src, name) {
-                    var file = src + '/index.twig';
+                    var files = [
+                        src + '/index.twig'
+                    ];
 
                     replace({
                         from: [/__PAGE__/g],
                         to: name,
-                        files: [file],
+                        files: files,
                         encoding: 'utf8'
                     });
                 }
@@ -49,6 +51,18 @@ class Totem extends Generator {
                     'stylesheets/module.scss',
                     'javascripts/module.js'
                 ];
+                output_config['callback'] = function (src, name) {
+                    var files = [
+                        src + '/stylesheets/' + name +'.scss'
+                    ];
+
+                    replace({
+                        from: [/__MODULE__/g],
+                        to: name,
+                        files: files,
+                        encoding: 'utf8'
+                    });
+                }
         }
 
         return output_config;
