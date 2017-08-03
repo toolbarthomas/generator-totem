@@ -10,6 +10,7 @@
 
         <link rel="stylesheet" href="/resources/templates/__TEMPLATE__/stylesheets/__TEMPLATE__.css" type="text/css">
 
+        {% block page_style %}{% endblock %}
         {% block page_stylesheets %}{% endblock %}
     </head>
     <body>
@@ -36,5 +37,7 @@
     </script>
 
     <script src="/resources/templates/__TEMPLATE__/javascripts/__TEMPLATE__.js"></script>
+
+    {% block page_script %}{% endblock %}
     {% block page_javascripts %}{% endblock %}
 </html>

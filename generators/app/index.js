@@ -123,7 +123,7 @@ module.exports = class extends Totem  {
             message: 'Name your partial.',
             default: 'new',
             filter: function(name) {
-                return name = name.replace(' ','-');
+                return name = name.split(' ').join('-');
             }
         },
         {
