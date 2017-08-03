@@ -6,7 +6,7 @@
 // Please don't remove _globbing-fix.scss because that file is used to prevent the sass
 // error when we don't have any subfiles for our module
 
-@import "__globbing-fix";
+@import "globbing-fix";
 
 @import "shared/**";
 @import "helpers/**";

@@ -1,0 +1,40 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+        <title>__TEMPLATE__ template</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+
+        <link rel="stylesheet" href="/resources/templates/__TEMPLATE__/stylesheets/__TEMPLATE__.css" type="text/css">
+
+        {% block page_stylesheets %}{% endblock %}
+    </head>
+    <body>
+        <div class="sticky-end">
+            <div class="sticky-end-body">
+                {% block header %}{% endblock %}
+
+                {% block content %}
+                    No content defined.
+                {% endblock %}
+            </div>
+            <div class="sticky-end-footer">
+                {% block footer %}{% endblock %}
+            </div>
+        </div>
+    </body>
+
+    <script src="/resources/main/javascripts/lib/svg-sprite-injector/svg-sprite-injector.js"></script>
+    <script>
+        var cachebreaker = 'cached';
+        svgSpriteInjector('/resources/main/images/layout/svg-sprite.svg', {
+            revision: cachebreaker
+        });
+    </script>
+
+    <script src="/resources/templates/__TEMPLATE__/javascripts/__TEMPLATE__.js"></script>
+    {% block page_javascripts %}{% endblock %}
+</html>
