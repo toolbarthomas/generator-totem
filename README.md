@@ -1,5 +1,5 @@
 # generator-totem [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
-> Default generator for Totem based projects
+> Yeoman generator for creating Totem projects & modules
 
 ## Installation
 
@@ -10,7 +10,13 @@ npm install -g yo
 npm install -g generator-totem
 ```
 
-Then generate your new project:
+Then install your new project:
+
+```bash
+yo totem:install
+```
+
+And create partials with
 
 ```bash
 yo totem
