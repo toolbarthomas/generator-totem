@@ -21,9 +21,43 @@ module.exports = class extends generator {
                 default: '',
                 filter: function (name) {
                     name = name.split(' ').join('-');
-                    name = name.split('.').join('');
 
                     return name;
+                },
+                validate: function(name) {
+                    var done = this.async();
+
+                    // Clone into current directory
+                    if(name === '') {
+
+                        fse.readdir(__dirname, function (err, files) {
+                            if (err) {
+                                done(error);
+                                return;
+                            } else {
+                                if (!files.length)
+                                {
+                                    done('Root directory is not empty, aborting.', false);
+                                    return;
+                                }
+                            }
+                        });
+                    }
+                    else {
+                        fse.pathExists(name, (error, exists) => {
+                            if(error) {
+                                done(error, false);
+                                return;
+                            }
+
+                            if(exists) {
+                                done('Directory already exists! Please use another destination.');
+                                return;
+                            }
+                        });
+                    }
+
+                    done(null, true);
                 }
             }
         ];
@@ -31,7 +65,7 @@ module.exports = class extends generator {
         return this.prompt(prompts).then(props => {
             this.props = props;
 
-            this.log(chalk.green('All done, Fetching Totem...'))
+            this.log(chalk.green('Ready to download...'))
         });
 
         return;
@@ -40,18 +74,21 @@ module.exports = class extends generator {
     writing() {
         var done = this.async();
         var props = this.props;
-        var path = props.path + '/**';
 
-        remote('toolbarthomas', 'totem', 'master', function (err, cache_path) {
-            del([cache_path]).then(function() {
+        remote('toolbarthomas', 'totem', 'develop', function (err, cache_path) {
 
+            fse.copy(
+                cache_path,
+                props.path,
+                error => {
+                if (error) {
+                    return error;
+                }
+
+                done();
+                this.log(chalk.green('Done'))
             });
 
-            this.fs.copy(
-                cache_path,
-                this.destinationPath(props.path)
-            );
-            done();
         }.bind(this));
     }
 };
