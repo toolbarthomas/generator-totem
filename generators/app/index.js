@@ -106,7 +106,7 @@ module.exports = class extends Totem  {
     this.log(Chalk.reset('See: https://github.com/toolbarthomas/generator-totem') + '\n');
 
     const prompts = [
-    {
+        {
             type: 'list',
             name: 'category',
             message: 'For which category do you wan\'t to define your partial in?',
