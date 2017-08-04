@@ -101,8 +101,6 @@ module.exports = class extends generator {
                     return error;
                 }
 
-                this.log(chalk.green('Done, installing dependencies.'));
-
                 if(props.path != '')
                 {
                     process.chdir(props.path);
