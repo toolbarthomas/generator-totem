@@ -59,6 +59,22 @@ module.exports = class extends generator {
 
                     done(null, true);
                 }
+            },
+            {
+                type: 'list',
+                name: 'branch',
+                message: 'Select the desired branch to download',
+                choices: [
+                    {
+                        value: 'master',
+                        name: 'Master (stable)'
+                    },
+                    {
+                        value: 'develop',
+                        name: 'Develop (latest)'
+                    }
+                ],
+                default: 0,
             }
         ];
 
@@ -75,7 +91,7 @@ module.exports = class extends generator {
         var done = this.async();
         var props = this.props;
 
-        remote('toolbarthomas', 'totem', 'develop', function (err, cache_path) {
+        remote('toolbarthomas', 'totem', props.branch, function (err, cache_path) {
 
             fse.copy(
                 cache_path,
