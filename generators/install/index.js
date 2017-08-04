@@ -101,8 +101,20 @@ module.exports = class extends generator {
                     return error;
                 }
 
+                this.log(chalk.green('Done, installing dependencies.'));
+
+                if(props.path != '')
+                {
+                    process.chdir(props.path);
+                }
+
+                this.installDependencies({
+                    npm: true,
+                    bower: true,
+                    yarn: false
+                });
+
                 done();
-                this.log(chalk.green('Done'))
             });
 
         }.bind(this));
