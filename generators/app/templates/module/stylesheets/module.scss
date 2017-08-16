@@ -6,12 +6,22 @@
 // Please don't remove _globbing-fix.scss because that file is used to prevent the sass
 // error when we don't have any subfiles for our module
 
-@import "globbing-fix";
-
 @import "shared/**";
+@import "../../../src/resources/main/stylesheets/shared/**"; //Import location for Totem when this module is defined as a project module.
+@import "../../../../../src/resources/main/stylesheets/shared/**"; //Import location for Totem when this module is defined as an external module.
+
 @import "helpers/**";
+@import "../../../src/resources/main/stylesheets/helpers/**"; //Import location for Totem when this module is defined as a project module.
+@import "../../../../../src/resources/main/stylesheets/helpers/**"; //Import location for Totem when this module is defined as an external module.
+
 @import "settings/**";
+@import "../../../src/resources/main/stylesheets/settings/**"; //Import location for Totem when this module is defined as a project module.
+@import "../../../../../src/resources/main/stylesheets/settings/**"; //Import location for Totem when this module is defined as an external module.
+
 @import "tools/**";
+@import "../../../src/resources/main/stylesheets/tools/**"; //Import location for Totem when this module is defined as a project module.
+@import "../../../../../src/resources/main/stylesheets/tools/**"; //Import location for Totem when this module is defined as an external module.
+
 @import "generic/**";
 @import "base/**";
 @import "components/**";
