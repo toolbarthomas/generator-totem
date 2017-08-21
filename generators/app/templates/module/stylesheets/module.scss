@@ -8,19 +8,19 @@
 
 @import "../../../src/resources/main/stylesheets/shared/**"; //Import location for Totem when this module is defined as a project module.
 @import "../../../../../src/resources/main/stylesheets/shared/**"; //Import location for Totem when this module is defined as an external module.
-@import "shared/**"; //Import tools for module
+@import "shared/**"; //Import location for Totem when this module is defined as a project module
 
 @import "../../../src/resources/main/stylesheets/helpers/**"; //Import location for Totem when this module is defined as a project module.
 @import "../../../../../src/resources/main/stylesheets/helpers/**"; //Import location for Totem when this module is defined as an external module.
-@import "helpers/**"; //Import tools for module
+@import "helpers/**"; //Import location for Totem when this module is defined as a project module
 
 @import "../../../src/resources/main/stylesheets/settings/**"; //Import location for Totem when this module is defined as a project module.
 @import "../../../../../src/resources/main/stylesheets/settings/**"; //Import location for Totem when this module is defined as an external module.
-@import "settings/**"; //Import tools for module
+@import "settings/**"; //Import location for Totem when this module is defined as a project module
 
 @import "../../../src/resources/main/stylesheets/tools/**"; //Import location for Totem when this module is defined as a project module.
 @import "../../../../../src/resources/main/stylesheets/tools/**"; //Import location for Totem when this module is defined as an external module.
-@import "tools/**"; //Import tools for module
+@import "tools/**"; //Import location for Totem when this module is defined as a project module
 
 @import "generic/**";
 @import "base/**";
