@@ -4,6 +4,9 @@ const Chalk = require('chalk');
 const fse = require('fs-extra');
 const path = require('path');
 const replace = require('replace-in-file');
+
+const CWD = process.cwd();
+
 class Totem extends Generator {
     getOutputConfig(category) {
         var output_config = [];
@@ -153,8 +156,9 @@ module.exports = class extends Totem  {
     var template = this.props.template;
 
     var output_config = this.getOutputConfig(this.props.category);
+
    
-    var dest = '.';
+    var dest = CWD;
     if (this.props.destination) {
         dest = './src/resources/' + output_config.base_folder + '/' + title;
     }
