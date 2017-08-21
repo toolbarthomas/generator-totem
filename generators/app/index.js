@@ -4,9 +4,6 @@ const Chalk = require('chalk');
 const fse = require('fs-extra');
 const path = require('path');
 const replace = require('replace-in-file');
-
-const Basepath = './src/resources';
-
 class Totem extends Generator {
     getOutputConfig(category) {
         var output_config = [];
@@ -133,6 +130,12 @@ module.exports = class extends Totem  {
             name: 'template',
             message: 'For wich template is this page meant for?',
             default: 'default'
+        },
+        {
+            type: 'confirm',
+            name: 'destination',
+            message: 'Do you want to place your partial within the Totem project structure?',
+            default: 0,
         }
     ];
 
@@ -150,8 +153,11 @@ module.exports = class extends Totem  {
     var template = this.props.template;
 
     var output_config = this.getOutputConfig(this.props.category);
-
-    var dest = Basepath + '/' + output_config.base_folder + '/' + title;
+   
+    var dest = '.';
+    if (this.props.destination) {
+        dest = './src/resources/' + output_config.base_folder + '/' + title;
+    }
 
     // Create file structure for the selected type
     fse.copy(
@@ -200,6 +206,6 @@ module.exports = class extends Totem  {
         this.log(Chalk.green(output_config.success_message));
     }).catch(error => {
         this.log(Chalk.red('An error has occured: ' + error));
-     });
+    });
   }
 };
