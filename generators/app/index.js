@@ -83,7 +83,8 @@ class Totem extends Generator {
                     }
 
                     var files = [
-                        src + '/stylesheets/' + labels.title +'.scss'
+                        src + '/stylesheets/' + labels.title +'.scss',
+                        src + '/index.twig'
                     ];
 
                     replace({
