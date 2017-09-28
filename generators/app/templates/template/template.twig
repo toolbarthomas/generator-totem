@@ -9,8 +9,8 @@
 
         <link href="/resources/templates/__TEMPLATE__/stylesheets/__TEMPLATE__.css" type="text/css" rel="stylesheet">
 
-        {% block page_style %}{% endblock %}
         {% block page_stylesheets %}{% endblock %}
+        {% block page_style %}{% endblock %}
     </head>
     <body>
         <div class="sticky-end">
@@ -29,6 +29,6 @@
 
     <script src="/resources/templates/__TEMPLATE__/javascripts/__TEMPLATE__.js"></script>
 
-    {% block page_script %}{% endblock %}
     {% block page_javascripts %}{% endblock %}
+    {% block page_script %}{% endblock %}
 </html>
