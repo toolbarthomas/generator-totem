@@ -75,6 +75,7 @@ class Totem extends Generator {
                 output_config['success_message'] = 'Module created';
                 output_config['base_files'] = [
                     'stylesheets/module.scss',
+                    'stylesheets/module.bundle.scss',
                     'javascripts/module.js'
                 ];
                 output_config['callback'] = function (src, labels) {
@@ -178,9 +179,16 @@ module.exports = class extends Totem  {
         // Queuer to fire up the callback
         var queue = 0;
         output_config.base_files.forEach(function(base_file) {
+
+            // Define suffix for setting the bundle file
+            var suffix = ''
+            if (base_file.search('.bundle.') > 0) {
+                suffix = '.bundle';
+            }
+
             var rename = {
                 input: dest + '/' + base_file,
-                output: path.dirname(dest + '/' + base_file) + '/' + this.props.title + '.' + (path.extname(base_file).split('.').pop())
+                output: path.dirname(dest + '/' + base_file) + '/' + this.props.title + suffix + '.' + (path.extname(base_file).split('.').pop())
             };
 
             // Rename the base files
