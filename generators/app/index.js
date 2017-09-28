@@ -157,7 +157,7 @@ module.exports = class extends Totem  {
 
     var output_config = this.getOutputConfig(this.props.category);
 
-   
+
     var dest = CWD;
     if (this.props.destination) {
         dest = './src/resources/' + output_config.base_folder + '/' + title;
