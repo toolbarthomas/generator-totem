@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+// __TEMPLATE__ template
+//
+// This file is used to generate a seperate stylesheet for your template
+
+@import "shared/**";
+@import "helpers/**";
+@import "settings/**";
+@import "tools/**";
+@import "generic/**";
+@import "base/**";
+@import "objects/**";
+@import "components/**";
+@import "utilities/**";
