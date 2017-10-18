@@ -29,6 +29,7 @@ class Totem extends Generator {
 
                     // All files that should have replaced content that matches the new page name
                     var files = [
+                        src + '/package.json',
                         src + '/index.twig',
                         src + '/stylesheets/' + labels.title + '.scss',
                         src + '/javascripts/' + labels.title + '.js'
@@ -63,6 +64,7 @@ class Totem extends Generator {
 
                     // All files that should have replaced content that matches the new template name
                     var files = [
+                        src + '/package.json',
                         src + '/' + labels.title + '.twig'
                     ];
 
@@ -89,6 +91,7 @@ class Totem extends Generator {
 
                     // All files that should have replaced content that matches the new module name
                     var files = [
+                        src + '/package.json',
                         src + '/stylesheets/' + labels.title +'.scss',
                         src + '/stylesheets/' + labels.title + '.bundle.scss',
                         src + '/index.twig'
