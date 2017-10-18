@@ -18,7 +18,7 @@ module.exports = class extends generator {
                 type: 'input',
                 name: 'path',
                 message: 'Define an additional path to install Totem',
-                default: '',
+                default: '.',
                 filter: function (name) {
                     name = name.split(' ').join('-');
 
@@ -90,7 +90,6 @@ module.exports = class extends generator {
     writing() {
         var done = this.async();
         var props = this.props;
-
         var $this = this;
 
         download('github:toolbarthomas/totem#' + props.branch, props.path, function(error) {
@@ -98,7 +97,7 @@ module.exports = class extends generator {
                 return error;
             }
 
-            if (props.path != '') {
+            if (props.path != '.') {
                 process.chdir(props.path);
             }
 
