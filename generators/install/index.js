@@ -1,10 +1,10 @@
 'use strict';
 const generator = require('yeoman-generator');
-const remote = require('yeoman-remote');
 const chalk = require('chalk');
 const path = require('path');
 const fse = require('fs-extra');
 const del = require('del');
+const download = require('download-git-repo');
 
 module.exports = class extends generator {
     prompting() {
@@ -91,30 +91,22 @@ module.exports = class extends generator {
         var done = this.async();
         var props = this.props;
 
-        remote('toolbarthomas', 'totem', props.branch, function (err, cache_path) {
+        var $this = this;
 
-            fse.copy(
-                cache_path,
-                props.path,
-                error => {
-                if (error) {
-                    return error;
-                }
+        download('github:toolbarthomas/totem#' + props.branch, props.path, function(error) {
+            if (error) {
+                return error;
+            }
 
-                if(props.path != '')
-                {
-                    process.chdir(props.path);
-                }
+            if (props.path != '') {
+                process.chdir(props.path);
+            }
 
-                this.installDependencies({
-                    npm: true,
-                    bower: true,
-                    yarn: false
-                });
-
-                done();
+            $this.installDependencies({
+                npm: true,
+                bower: true,
+                yarn: false
             });
-
-        }.bind(this));
+        });
     }
 };
