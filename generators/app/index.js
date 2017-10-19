@@ -17,11 +17,7 @@ class Totem extends Generator {
         switch(category) {
             case 'group':
                 output_config['base_folder'] = 'groups';
-                output_config['success_message'] = 'Page created';
-                output_config['base_files'] = [
-                    'stylesheets/page.scss',
-                    'javascripts/page.js'
-                ];
+                output_config['success_message'] = 'Page created',
                 output_config['callback'] = function(src, labels) {
                     if(typeof labels.title === 'undefined' || labels.template === 'undefined' ) {
                         return;
@@ -31,8 +27,8 @@ class Totem extends Generator {
                     var files = [
                         src + '/package.json',
                         src + '/pages/index.twig',
-                        src + '/stylesheets/' + labels.title + '.scss',
-                        src + '/javascripts/' + labels.title + '.js'
+                        src + '/stylesheets/index.scss',
+                        src + '/javascripts/index.js'
                     ];
 
                     replace({
@@ -183,6 +179,11 @@ module.exports = class extends Totem  {
         this.log(Chalk.yellow('Structure created, creating files...'));
 
         if(typeof output_config.base_files === 'undefined') {
+            output_config.callback(dest, {
+                title: title,
+                template: template
+            });
+
             return;
         }
 
