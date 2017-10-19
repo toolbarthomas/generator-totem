@@ -15,8 +15,8 @@ class Totem extends Generator {
 
         // Define the base folder to place the new module in.
         switch(category) {
-            case 'page':
-                output_config['base_folder'] = 'pages';
+            case 'group':
+                output_config['base_folder'] = 'groups';
                 output_config['success_message'] = 'Page created';
                 output_config['base_files'] = [
                     'stylesheets/page.scss',
@@ -30,7 +30,7 @@ class Totem extends Generator {
                     // All files that should have replaced content that matches the new page name
                     var files = [
                         src + '/package.json',
-                        src + '/index.twig',
+                        src + '/pages/index.twig',
                         src + '/stylesheets/' + labels.title + '.scss',
                         src + '/javascripts/' + labels.title + '.js'
                     ];
@@ -120,10 +120,10 @@ module.exports = class extends Totem  {
         {
             type: 'list',
             name: 'category',
-            message: 'For which category do you wan\'t to define your partial in?',
+            message: 'Which type do you wan\'t to scaffold.',
             choices: [
                 'module',
-                'page',
+                'group',
                 'template'
             ],
             default: 0,
@@ -131,7 +131,7 @@ module.exports = class extends Totem  {
         {
             type: 'input',
             name: 'title',
-            message: 'Name your partial.',
+            message: 'Name your new partial.',
             default: 'new',
             filter: function(name) {
                 return name = name.split(' ').join('-');
@@ -139,7 +139,7 @@ module.exports = class extends Totem  {
         },
         {
             when: function(response) {
-                return response.category == 'page';
+                return response.category == 'group';
             },
             name: 'template',
             message: 'For wich template is this page meant for?',
@@ -170,6 +170,7 @@ module.exports = class extends Totem  {
 
 
     var dest = CWD;
+    // Set the generated files destination
     if (this.props.destination) {
         dest = './src/resources/' + output_config.base_folder + '/' + title;
     }
