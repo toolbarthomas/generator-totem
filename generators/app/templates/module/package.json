@@ -3,15 +3,11 @@
     "version": "0.1.0",
     "description": "",
     "scripts": {
-        "postinstall": "./node_modules/bower/bin/bower install",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [
         "totem",
         "totem-module",
         "__MODULE__"
-    ],
-    "dependencies": {
-        "bower": "^1.8.2"
-    }
+    ]
 }
