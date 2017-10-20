@@ -1,10 +1,17 @@
 'use strict';
+
+require('dotenv').config();
+
+// Set default destination for our generator commands
+if (typeof process.env.TOTEM_GENERATOR_DEST === 'undefined') {
+    process.env.TOTEM_GENERATOR_DEST = './src/resources/';
+}
+
 const Generator = require('yeoman-generator');
 const Chalk = require('chalk');
 const fse = require('fs-extra');
 const path = require('path');
 const replace = require('replace-in-file');
-
 const CWD = process.cwd();
 
 class Totem extends Generator {
@@ -142,7 +149,7 @@ module.exports = class extends Totem  {
         {
             type: 'confirm',
             name: 'destination',
-            message: 'Do you want to place your partial within the Totem project structure?',
+            message: 'Do you want to place your partial within the Totem project structure?' + ' -> (' + process.env.TOTEM_GENERATOR_DEST + ')',
             default: 0,
         }
     ];
@@ -166,7 +173,7 @@ module.exports = class extends Totem  {
     var dest = CWD;
     // Set the generated files destination
     if (this.props.destination) {
-        dest = './src/resources/' + output_config.base_folder + '/' + title;
+        dest = process.env.TOTEM_GENERATOR_DEST + output_config.base_folder + '/' + title;
     }
 
     // Create file structure for the selected type
