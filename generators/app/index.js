@@ -1,10 +1,16 @@
 'use strict';
 
+// Load up the ENV file
 require('dotenv').config();
 
 // Set default destination for our generator commands
 if (typeof process.env.TOTEM_GENERATOR_DEST === 'undefined') {
-    process.env.TOTEM_GENERATOR_DEST = './src/resources/';
+    process.env.TOTEM_GENERATOR_DEST = './src/resources';
+}
+
+// Cleanup the last slash tha't has been defined in our env variable.
+if (process.env.TOTEM_GENERATOR_DEST.substring(process.env.TOTEM_GENERATOR_DEST.length - 1) == "/") {
+    process.env.TOTEM_GENERATOR_DEST = process.env.TOTEM_GENERATOR_DEST.substring(0, process.env.TOTEM_GENERATOR_DEST.length - 1);
 }
 
 const Generator = require('yeoman-generator');
@@ -25,6 +31,10 @@ class Totem extends Generator {
             case 'group':
                 output_config['base_folder'] = 'groups';
                 output_config['success_message'] = 'Page created',
+                output_config['base_files'] = [
+                    'stylesheets/group.scss',
+                    'javascripts/group.js'
+                ];
                 output_config['callback'] = function(src, labels) {
                     if(typeof labels.title === 'undefined' || labels.template === 'undefined' ) {
                         return;
@@ -33,8 +43,8 @@ class Totem extends Generator {
                     // All files that should have replaced content that matches the new page name
                     var files = [
                         src + '/pages/index.twig',
-                        src + '/stylesheets/index.scss',
-                        src + '/javascripts/index.js'
+                        src + '/stylesheets/' + labels.title + '.scss',
+                        src + '/javascripts/' + labels.title + '.js'
                     ];
 
                     replace({
@@ -100,8 +110,14 @@ class Totem extends Generator {
 
                     replace({
                         files: files,
-                        from: [/__MODULE__/g],
-                        to: labels.title,
+                        from: [
+                            /__MODULE__/g,
+                            /__TOTEM_GENERATOR_DEST__/g
+                        ],
+                        to: [
+                            labels.title,
+                            process.env.TOTEM_GENERATOR_DEST, // Match the relative path to our generator path,
+                        ],
                         encoding: 'utf8'
                     });
                 }
@@ -173,7 +189,7 @@ module.exports = class extends Totem  {
     var dest = CWD;
     // Set the generated files destination
     if (this.props.destination) {
-        dest = process.env.TOTEM_GENERATOR_DEST + output_config.base_folder + '/' + title;
+        dest = process.env.TOTEM_GENERATOR_DEST + '/' + output_config.base_folder + '/' + title;
     }
 
     // Create file structure for the selected type
