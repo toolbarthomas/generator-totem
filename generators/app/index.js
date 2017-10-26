@@ -20,6 +20,11 @@ const path = require('path');
 const replace = require('replace-in-file');
 const CWD = process.cwd();
 
+const updateNotifier = require('update-notifier');
+const pkg = require(CWD + '/package.json');
+
+updateNotifier({pkg}).notify();
+
 class Totem extends Generator {
     getOutputConfig(category) {
         var output_config = [];

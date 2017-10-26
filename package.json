@@ -33,6 +33,7 @@
     "fs-extra": "^4.0.2",
     "path": "^0.12.7",
     "replace-in-file": "^3.0.0-beta.2",
+    "update-notifier": "^2.3.0",
     "yeoman-generator": "^2.0.0",
     "yosay": "^2.0.1"
   },
