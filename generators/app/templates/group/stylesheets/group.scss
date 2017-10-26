@@ -6,19 +6,35 @@
 ///
 
 ///
-// This file is used to generate a seperate stylesheet for your page
+// This file is used to generate a seperate stylesheet for this page.
 ///
 
 @import "../../../main/stylesheets/shared/**";
+@import "../../../../../submodules/totem.module*/stylesheets/shared/**";
+@import "../../../../../bower_components/totem.module*/stylesheets/shared/**";
+@import "../../../../../node_modules/totem.module*/stylesheets/shared/**";
+@import "../../../modules/*/stylesheets/shared/**";
 @import "shared/**";
 
 @import "../../../main/stylesheets/helpers/**";
+@import "../../../../../submodules/totem.module*/stylesheets/helpers/**";
+@import "../../../../../bower_components/totem.module*/stylesheets/helpers/**";
+@import "../../../../../node_modules/totem.module*/stylesheets/helpers/**";
+@import "../../../modules/stylesheets/helpers/**";
 @import "helpers/**";
 
 @import "../../../main/stylesheets/settings/**";
+@import "../../../../../submodules/totem.module*/stylesheets/settings/**";
+@import "../../../../../bower_components/totem.module*/stylesheets/settings/**";
+@import "../../../../../node_modules/totem.module*/stylesheets/settings/**";
+@import "../../../modules/stylesheets/settings/**";
 @import "settings/**";
 
+@import "../../../../../submodules/totem.module*/stylesheets/tools/**";
+@import "../../../../../bower_components/totem.module*/stylesheets/tools/**";
+@import "../../../../../node_modules/totem.module*/stylesheets/tools/**";
 @import "../../../main/stylesheets/tools/**";
+@import "../../../modules/stylesheets/tools/**";
 @import "tools/**";
 
 @import "generic/**";
