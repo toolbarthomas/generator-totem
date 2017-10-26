@@ -1,42 +1,52 @@
 @charset "UTF-8";
 
-// __MODULE__ Module
+///
+// @name: totem.module.button
+// @type: Module
+///
+
+///
+// This file is used to generate a seperate stylesheet for this module
+// with the project main styles (i.e. Totem typography).
 //
-// This file is used to generate a seperate stylesheet for your module with the project main styles (i.e. Totem typography)
-// Shared styles should be defined within the module's view
+// The following import order is used to define were the current module is located:
+// 1. [../../../totem/__TOTEM_GENERATOR_DEST__/main/stylesheets/...] Is the import location if the current module is defined outside the project (../totem_submodules/)
+// 2. [../../../main/stylesheets/...] Is the import location if the module is defined within the project (__TOTEM_GENERATOR_DEST__/modules/)
+// 3. [.../**] Is the import location for all stylesheets for the current module.
+///
 
-@import "../../../main/stylesheets/shared/**"; //Import location for Totem when this module is defined as a project module.
-@import "../../../../../__TOTEM_GENERATOR_DEST__/main/stylesheets/shared/**"; //Import location for Totem when this module is defined as an external module.
-@import "shared/**"; //Import location for Totem when this module is defined as a standalone module
+@import "../../../totem/__TOTEM_GENERATOR_DEST__/main/stylesheets/shared/**";
+@import "../../../main/stylesheets/shared/**";
+@import "shared/**";
 
-@import "../../../main/stylesheets/helpers/**"; //Import location for Totem when this module is defined as a project module.
-@import "../../../../../__TOTEM_GENERATOR_DEST__/main/stylesheets/helpers/**"; //Import location for Totem when this module is defined as an external module.
-@import "helpers/**"; //Import location for Totem when this module is defined as a standalone module
+@import "../../../totem/__TOTEM_GENERATOR_DEST__/main/stylesheets/helpers/**";
+@import "../../../main/stylesheets/helpers/**";
+@import "helpers/**";
 
-@import "../../../main/stylesheets/settings/**"; //Import location for Totem when this module is defined as a project module.
-@import "../../../../../__TOTEM_GENERATOR_DEST__/main/stylesheets/settings/**"; //Import location for Totem when this module is defined as an external module.
-@import "settings/**"; //Import location for Totem when this module is defined as a standalone module
+@import "../../../totem/__TOTEM_GENERATOR_DEST__/main/stylesheets/settings/**";
+@import "../../../main/stylesheets/settings/**";
+@import "settings/**";
 
-@import "../../../main/stylesheets/tools/**"; //Import location for Totem when this module is defined as a project module.
-@import "../../../../../__TOTEM_GENERATOR_DEST__/main/stylesheets/tools/**"; //Import location for Totem when this module is defined as an external module.
-@import "tools/**"; //Import location for Totem when this module is defined as a standalone module
+@import "../../../totem/__TOTEM_GENERATOR_DEST__/main/stylesheets/tools/**";
+@import "../../../main/stylesheets/tools/**";
+@import "tools/**";
 
-@import "../../../main/stylesheets/generic/**"; //Import location for Totem when this module is defined as a project module.
-@import "../../../../../__TOTEM_GENERATOR_DEST__/main/stylesheets/generic/**"; //Import location for Totem when this module is defined as an external module.
-@import "generic/**"; //Import location for Totem when this module is defined as a standalone module
+@import "../../../totem/__TOTEM_GENERATOR_DEST__/main/stylesheets/components/**";
+@import "../../../main/stylesheets/generic/**";
+@import "generic/**";
 
-@import "../../../main/stylesheets/base/**"; //Import location for Totem when this module is defined as a project module.
-@import "../../../../../__TOTEM_GENERATOR_DEST__/main/stylesheets/base/**"; //Import location for Totem when this module is defined as an external module.
-@import "base/**"; //Import location for Totem when this module is defined as a standalone module
+@import "../../../totem/__TOTEM_GENERATOR_DEST__/main/stylesheets/base/**";
+@import "../../../main/stylesheets/base/**";
+@import "base/**";
 
-@import "../../../main/stylesheets/objects/**"; //Import location for Totem when this module is defined as a project module.
-@import "../../../../../__TOTEM_GENERATOR_DEST__/main/stylesheets/objects/**"; //Import location for Totem when this module is defined as an external module.
-@import "objects/**"; //Import location for Totem when this module is defined as a standalone module
+@import "../../../totem/__TOTEM_GENERATOR_DEST__/main/stylesheets/objects/**";
+@import "../../../main/stylesheets/objects/**";
+@import "objects/**";
 
-@import "../../../main/stylesheets/components/**"; //Import location for Totem when this module is defined as a project module.
-@import "../../../../../__TOTEM_GENERATOR_DEST__/main/stylesheets/components/**"; //Import location for Totem when this module is defined as an external module.
-@import "components/**"; //Import location for Totem when this module is defined as a standalone module
+@import "../../../totem/__TOTEM_GENERATOR_DEST__/main/stylesheets/components/**";
+@import "../../../main/stylesheets/components/**";
+@import "components/**";
 
-@import "../../../main/stylesheets/utilities/**"; //Import location for Totem when this module is defined as a project module.
-@import "../../../../../__TOTEM_GENERATOR_DEST__/main/stylesheets/utilities/**"; //Import location for Totem when this module is defined as an external module.
-@import "utilities/**"; //Import location for Totem when this module is defined as a standalone module
+@import "../../../totem/__TOTEM_GENERATOR_DEST__/main/stylesheets/utilities/**";
+@import "../../../main/stylesheets/utilities/**";
+@import "utilities/**";
