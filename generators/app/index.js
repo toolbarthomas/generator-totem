@@ -15,15 +15,20 @@ if (process.env.TOTEM_GENERATOR_DEST.substring(process.env.TOTEM_GENERATOR_DEST.
 
 const Generator = require('yeoman-generator');
 const Chalk = require('chalk');
-const fse = require('fs-extra');
-const path = require('path');
-const replace = require('replace-in-file');
-const CWD = process.cwd();
+const Fse = require('fs-extra');
+const Path = require('path');
+const Replace = require('replace-in-file');
+const Cwd = process.cwd();
+const UpdateNotifier = require('update-notifier');
 
-const updateNotifier = require('update-notifier');
-const pkg = require(CWD + '/package.json');
+if (Fse.existsSync('./package.json')) {
+    var pkg = JSON.parse(Fse.readFileSync('./package.json'));
 
-updateNotifier({pkg}).notify();
+    UpdateNotifier({
+        pkg,
+        updateCheckInterval: 0// 1000 * 60 * 60
+    }).notify();
+}
 
 class Totem extends Generator {
     getOutputConfig(category) {
@@ -52,7 +57,7 @@ class Totem extends Generator {
                         src + '/javascripts/' + labels.title + '.js'
                     ];
 
-                    replace({
+                    Replace({
                         files: files,
                         from: [
                             /__PAGE__/g,
@@ -84,7 +89,7 @@ class Totem extends Generator {
                         src + '/' + labels.title + '.twig'
                     ];
 
-                    replace({
+                    Replace({
                         files: files,
                         from: [/__TEMPLATE__/g],
                         to: labels.title,
@@ -113,7 +118,7 @@ class Totem extends Generator {
                         src + '/index.twig'
                     ];
 
-                    replace({
+                    Replace({
                         files: files,
                         from: [
                             /__MODULE__/g,
@@ -131,6 +136,7 @@ class Totem extends Generator {
         return output_config;
     }
 }
+
 module.exports = class extends Totem  {
   prompting() {
     this.log('');
@@ -191,14 +197,14 @@ module.exports = class extends Totem  {
     var output_config = this.getOutputConfig(this.props.category);
 
 
-    var dest = CWD;
+    var dest = Cwd;
     // Set the generated files destination
     if (this.props.destination) {
         dest = process.env.TOTEM_GENERATOR_DEST + '/' + output_config.base_folder + '/' + title;
     }
 
     // Create file structure for the selected type
-    fse.copy(
+    Fse.copy(
         this.templatePath(output_config.category),
         this.destinationPath(dest)
     ).then(() => {
@@ -225,11 +231,11 @@ module.exports = class extends Totem  {
 
             var rename = {
                 input: dest + '/' + base_file,
-                output: path.dirname(dest + '/' + base_file) + '/' + this.props.title + suffix + '.' + (path.extname(base_file).split('.').pop())
+                output: Path.dirname(dest + '/' + base_file) + '/' + this.props.title + suffix + '.' + (Path.extname(base_file).split('.').pop())
             };
 
             // Rename the base files
-            fse.rename(rename.input, rename.output, function(error) {
+            Fse.rename(rename.input, rename.output, function(error) {
                 if(error) {
                     throw error;
                 }
