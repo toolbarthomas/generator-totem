@@ -21,12 +21,12 @@ const Replace = require('replace-in-file');
 const Cwd = process.cwd();
 const UpdateNotifier = require('update-notifier');
 
-if (Fse.existsSync('./package.json')) {
-    var pkg = JSON.parse(Fse.readFileSync('./package.json'));
+if (Fse.existsSync(__dirname + '/../../package.json')) {
+    var pkg = JSON.parse(Fse.readFileSync(__dirname + '/../../package.json'));
 
     UpdateNotifier({
         pkg,
-        updateCheckInterval: 0// 1000 * 60 * 60
+        updateCheckInterval: 1000 * 60 * 60
     }).notify();
 }
 
