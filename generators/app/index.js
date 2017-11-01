@@ -222,7 +222,7 @@ module.exports = class extends Totem  {
         output_config.base_files.forEach(function(base_file) {
             var rename = {
                 input: dest + '/' + base_file,
-                output: Path.dirname(dest + '/' + base_file) + '/' + this.props.title + suffix + '.' + (Path.extname(base_file).split('.').pop())
+                output: Path.dirname(dest + '/' + base_file) + '/' + this.props.title + '.' + (Path.extname(base_file).split('.').pop())
             };
 
             // Rename the base files
