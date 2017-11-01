@@ -4,16 +4,12 @@
     No content defined.
 {% endblock %}
 
-{% block page_stylesheets %}
+{% block head %}
+    <link href="/resources/templates/__TEMPLATE__/stylesheets/__TEMPLATE__.css" rel="stylesheet"/>
     <link href="/resources/groups/__PAGE__/stylesheets/__PAGE__.css" rel="stylesheet"/>
 {% endblock %}
 
-{% block page_style %}
-{% endblock %}
-
-{% block page_javascripts %}
+{% block foot %}
+    <script src="/resources/templates/__TEMPLATE__/javascripts/__TEMPLATE__.js"></script>
     <script src="/resources/groups/__PAGE__/javascripts/__PAGE__.js"></script>
-{% endblock %}
-
-{% block page_script %}
 {% endblock %}
