@@ -182,7 +182,7 @@ module.exports = class extends Totem  {
         {
             type: 'confirm',
             name: 'destination',
-            message: 'Do you want to place your partial within the Totem project structure?' + ' -> (' + process.env.TOTEM_GENERATOR_DEST + ')',
+            message: 'Do you want to scaffold your partial within the Totem project structure?' + ' -> (' + process.env.TOTEM_GENERATOR_DEST + ')',
             default: 0,
         }
     ];
