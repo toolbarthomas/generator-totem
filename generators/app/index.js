@@ -61,11 +61,13 @@ class Totem extends Generator {
                         files: files,
                         from: [
                             /__PAGE__/g,
-                            /__TEMPLATE__/g
+                            /__TEMPLATE__/g,
+                            /__TOTEM_GENERATOR_DEST__/g
                         ],
                         to: [
                             labels.title,
-                            labels.template
+                            labels.template,
+                            process.env.TOTEM_GENERATOR_DEST, // Match the relative path to our generator path,
                         ],
                         encoding: 'utf8'
                     });
@@ -91,8 +93,14 @@ class Totem extends Generator {
 
                     Replace({
                         files: files,
-                        from: [/__TEMPLATE__/g],
-                        to: labels.title,
+                        from: [
+                            /__TEMPLATE__/g,
+                            /__TOTEM_GENERATOR_DEST__/g
+                        ],
+                        to: [
+                            labels.title,
+                            process.env.TOTEM_GENERATOR_DEST, // Match the relative path to our generator path,
+                        ],
                         encoding: 'utf8'
                     });
                 }
