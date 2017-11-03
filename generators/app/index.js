@@ -3,16 +3,6 @@
 // Load up the ENV file
 require('dotenv').config();
 
-// Set default destination for our generator commands
-if (typeof process.env.TOTEM_GENERATOR_DEST === 'undefined') {
-    process.env.TOTEM_GENERATOR_DEST = './src/resources';
-}
-
-// Cleanup the last slash tha't has been defined in our env variable.
-if (process.env.TOTEM_GENERATOR_DEST.substring(process.env.TOTEM_GENERATOR_DEST.length - 1) == "/") {
-    process.env.TOTEM_GENERATOR_DEST = process.env.TOTEM_GENERATOR_DEST.substring(0, process.env.TOTEM_GENERATOR_DEST.length - 1);
-}
-
 const Generator = require('yeoman-generator');
 const Chalk = require('chalk');
 const Fse = require('fs-extra');
@@ -61,13 +51,11 @@ class Totem extends Generator {
                         files: files,
                         from: [
                             /__PAGE__/g,
-                            /__TEMPLATE__/g,
-                            /__TOTEM_GENERATOR_DEST__/g
+                            /__TEMPLATE__/g
                         ],
                         to: [
                             labels.title,
                             labels.template,
-                            process.env.TOTEM_GENERATOR_DEST, // Match the relative path to our generator path,
                         ],
                         encoding: 'utf8'
                     });
@@ -94,12 +82,10 @@ class Totem extends Generator {
                     Replace({
                         files: files,
                         from: [
-                            /__TEMPLATE__/g,
-                            /__TOTEM_GENERATOR_DEST__/g
+                            /__TEMPLATE__/g
                         ],
                         to: [
-                            labels.title,
-                            process.env.TOTEM_GENERATOR_DEST, // Match the relative path to our generator path,
+                            labels.title
                         ],
                         encoding: 'utf8'
                     });
@@ -127,12 +113,10 @@ class Totem extends Generator {
                     Replace({
                         files: files,
                         from: [
-                            /__MODULE__/g,
-                            /__TOTEM_GENERATOR_DEST__/g
+                            /__MODULE__/g
                         ],
                         to: [
-                            labels.title,
-                            process.env.TOTEM_GENERATOR_DEST, // Match the relative path to our generator path,
+                            labels.title
                         ],
                         encoding: 'utf8'
                     });
@@ -182,7 +166,7 @@ module.exports = class extends Totem  {
         {
             type: 'confirm',
             name: 'destination',
-            message: 'Do you want to scaffold your partial within the Totem project structure?' + ' -> (' + process.env.TOTEM_GENERATOR_DEST + ')',
+            message: 'Do you want to scaffold your partial within the Totem project structure?' + ' -> (src/resources)',
             default: 0,
         }
     ];
@@ -206,7 +190,7 @@ module.exports = class extends Totem  {
     var dest = Cwd;
     // Set the generated files destination
     if (this.props.destination) {
-        dest = process.env.TOTEM_GENERATOR_DEST + '/' + output_config.base_folder + '/' + title;
+        dest = './src/resources/' + output_config.base_folder + '/' + title;
     }
 
     // Create file structure for the selected type

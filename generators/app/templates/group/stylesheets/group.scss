@@ -10,7 +10,7 @@
 //
 // The following import order will also include all non output styles from all modules and the core of Totem:
 // 1. [../../../main/stylesheets/...] Will import the non output core stylesheets from Totem
-// 2. [../../../../../{submodulesbower_components,}/totem*/stylesheets/...] Is the import location if the module is defined within the project (__TOTEM_GENERATOR_DEST__/modules/)
+// 2. [../../../../../{submodulesbower_components,}/totem*/stylesheets/...] Is the import location if the module is defined within the project (src/resources/modules/)
 // 3. [.../**] Is the import location for all stylesheets for the current module.
 ///
 
