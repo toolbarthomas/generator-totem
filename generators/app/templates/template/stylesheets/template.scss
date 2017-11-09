@@ -38,6 +38,13 @@
 @import "../../../modules/stylesheets/tools/**";
 @import "tools/**";
 
+@import "../../../../../totem_submodules/totem*/stylesheets/properties/**";
+@import "../../../../../bower_components/totem*/stylesheets/properties/**";
+@import "../../../../../node_modules/totem*/stylesheets/properties/**";
+@import "../../../main/stylesheets/properties/**";
+@import "../../../modules/stylesheets/properties/**";
+@import "properties/**";
+
 @import "generic/**";
 
 @import "base/**";
