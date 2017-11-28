@@ -70,22 +70,26 @@ class Totem extends Generator {
                     'template.twig'
                 ];
                 output_config['callback'] = function (src, labels) {
+
                     if (typeof labels.title === 'undefined') {
                         return;
                     }
 
                     // All files that should have replaced content that matches the new template name
                     var files = [
-                        src + '/' + labels.title + '.twig'
+                        src + '/' + labels.title + '.twig',
+                        src + '/stylesheets/' + labels.title + '.scss'
                     ];
 
                     Replace({
                         files: files,
                         from: [
+                            /__TEMPLATE__/g,
                             /__TEMPLATE__/g
                         ],
                         to: [
-                            labels.title
+                            labels.title,
+                            labels.template,
                         ],
                         encoding: 'utf8'
                     });
