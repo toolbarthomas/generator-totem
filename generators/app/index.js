@@ -43,18 +43,19 @@ class Totem extends Generator {
                     // All files that should have replaced content that matches the new page name
                     var files = [
                         src + '/pages/index.twig',
-                        src + '/stylesheets/' + labels.title + '.scss',
-                        src + '/javascripts/' + labels.title + '.js'
+                        src + '/stylesheets/' + labels.title + '.scss'
                     ];
 
                     Replace({
                         files: files,
                         from: [
                             /__PAGE__/g,
+                            /__NAME__/g,
                             /__TEMPLATE__/g
                         ],
                         to: [
                             labels.title,
+                            labels.title.charAt(0).toUpperCase() + labels.title.slice(1),
                             labels.template,
                         ],
                         encoding: 'utf8'
@@ -85,11 +86,13 @@ class Totem extends Generator {
                         files: files,
                         from: [
                             /__TEMPLATE__/g,
-                            /__TEMPLATE__/g
+                            /__TEMPLATE__/g,
+                            /__NAME__/g,
                         ],
                         to: [
                             labels.title,
                             labels.template,
+                            labels.title.charAt(0).toUpperCase() + labels.title.slice(1)
                         ],
                         encoding: 'utf8'
                     });
@@ -117,7 +120,9 @@ class Totem extends Generator {
                     Replace({
                         files: files,
                         from: [
-                            /__MODULE__/g
+                            /__MODULE__/g,
+                            /__NAME__/g,
+                            labels.title.charAt(0).toUpperCase() + labels.title.slice(1)
                         ],
                         to: [
                             labels.title
