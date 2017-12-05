@@ -6,46 +6,46 @@
 ///
 
 ///
-// This file is used to generate a seperate stylesheet for this template.
+// Template structure for displaying typography documentation Edit
 //
 ///
 
+// 1. Shared - Must use mixins & functions we use within the helpers layer
+@import "../../../totem/src/resources/main/stylesheets/shared/**";
 @import "../../../main/stylesheets/shared/**";
-@import "../../../../../../totem_submodules/totem*/stylesheets/shared/**";
-@import "../../../../../node_modules/totem*/stylesheets/shared/**";
-@import "../../../modules/*/stylesheets/shared/**";
 @import "shared/**";
 
+// 2. Helpers - Helper functions to get a value from a mapped setting.
+@import "../../../totem/src/resources/main/stylesheets/helpers/**";
 @import "../../../main/stylesheets/helpers/**";
-@import "../../../../../../totem_submodules/totem*/stylesheets/helpers/**";
-@import "../../../../../node_modules/totem*/stylesheets/helpers/**";
-@import "../../../modules/*/stylesheets/*/helpers/**";
 @import "helpers/**";
 
+// 3. Settings - All variables will be defined on the same level so we can share it in the whole project.
+@import "../../../totem/src/resources/main/stylesheets/settings/**";
 @import "../../../main/stylesheets/settings/**";
-@import "../../../../../../totem_submodules/totem*/stylesheets/settings/**";
-@import "../../../../../node_modules/totem*/stylesheets/settings/**";
-@import "../../../modules/*/stylesheets/*/settings/**";
 @import "settings/**";
 
+// 4. Tools - Mixins & functions for defining project styling should be defined here
+@import "../../../totem/src/resources/main/stylesheets/tools/**";
 @import "../../../main/stylesheets/tools/**";
-@import "../../../../../../totem_submodules/totem*/stylesheets/tools/**";
-@import "../../../../../node_modules/totem*/stylesheets/tools/**";
-@import "../../../modules/*/stylesheets/*/tools/**";
 @import "tools/**";
 
+// 5. Properties - Additional settings in Sass mapping format to share properties with. This layer can also use tools.
+@import "../../../totem/src/resources/main/stylesheets/properties/**";
 @import "../../../main/stylesheets/properties/**";
-@import "../../../../../../totem_submodules/totem*/stylesheets/properties/**";
-@import "../../../../../node_modules/totem*/stylesheets/properties/**";
-@import "../../../modules/*/stylesheets/*/properties/**";
 @import "properties/**";
 
+// 6. Generic - Default tag style definitions for your app/module will be defined here. E.g. reset.css
 @import "generic/**";
 
+// 7. Base - Typography and other global styling definitions should be defined here.
 @import "base/**";
 
+// 8. Objects - Class-based selectors with undecorated design patterns i.e. layout definitions
 @import "objects/**";
 
+// 9. Components - Specific UI components will be defined here.
 @import "components/**";
 
+// 10. Utilities and helper classes with ability to override anything within the project. Usefull to define helper classes like: .hide
 @import "utilities/**";

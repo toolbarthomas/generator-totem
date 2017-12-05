@@ -68,7 +68,6 @@ class Totem extends Generator {
                 output_config['base_files'] = [
                     'stylesheets/template.scss',
                     'javascripts/template.js',
-                    'template.twig'
                 ];
                 output_config['callback'] = function (src, labels) {
 
@@ -78,7 +77,7 @@ class Totem extends Generator {
 
                     // All files that should have replaced content that matches the new template name
                     var files = [
-                        src + '/' + labels.title + '.twig',
+                        src + '/index.twig',
                         src + '/stylesheets/' + labels.title + '.scss'
                     ];
 
