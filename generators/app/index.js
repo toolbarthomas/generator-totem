@@ -36,8 +36,14 @@ class Totem extends Generator {
                     'javascripts/group.js'
                 ];
                 output_config['callback'] = function(src, labels) {
-                    if(typeof labels.title === 'undefined' || labels.template === 'undefined' ) {
+                    if (typeof labels.title === 'undefined' || typeof labels.template === 'undefined' ) {
                         return;
+                    }
+
+                    // Set the default template path
+                    var template_base = 'totem::src/resources/templates/';
+                    if (labels.template != 'default') {
+                        template_base = 'totem_submodules::';
                     }
 
                     // All files that should have replaced content that matches the new page name
@@ -51,12 +57,14 @@ class Totem extends Generator {
                         from: [
                             /__PAGE__/g,
                             /__NAME__/g,
-                            /__TEMPLATE__/g
+                            /__TEMPLATE__/g,
+                            /__BASE__/g
                         ],
                         to: [
                             labels.title,
                             labels.title.charAt(0).toUpperCase() + labels.title.slice(1),
                             labels.template,
+                            template_base
                         ],
                         encoding: 'utf8'
                     });
