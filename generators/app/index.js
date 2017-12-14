@@ -67,7 +67,7 @@ class Totem extends Generator {
                         ],
                         to: [
                             labels.title,
-                            labels.title.charAt(0).toUpperCase() + labels.title.slice(1),
+                            labels.title,
                             labels.template,
                             template_base
                         ],
@@ -104,7 +104,7 @@ class Totem extends Generator {
                         to: [
                             labels.title,
                             labels.template,
-                            labels.title.charAt(0).toUpperCase() + labels.title.slice(1)
+                            labels.title
                         ],
                         encoding: 'utf8'
                     });
@@ -134,7 +134,7 @@ class Totem extends Generator {
                         from: [
                             /__MODULE__/g,
                             /__NAME__/g,
-                            labels.title.charAt(0).toUpperCase() + labels.title.slice(1)
+                            labels.title
                         ],
                         to: [
                             labels.title
