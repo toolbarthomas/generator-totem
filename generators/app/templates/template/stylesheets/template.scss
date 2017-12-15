@@ -19,10 +19,6 @@
 @import "../../../totem/src/resources/main/stylesheets/shared/**"; // Root: ./totem../totem_submodules
 @import "../../../src/resources/main/stylesheets/shared/**"; // Root: ./totem/node_modules
 
-// Import project modules
-@import "../../../modules/*/stylesheets/shared/**"; // Root: ./totem
-@import "../../../totem/src/resources/modules/*/stylesheets/shared/**"; // Root: ./totem../totem_submodules
-@import "../../../src/resources/modules/*/stylesheets/shared/**"; // Root: ./totem/node_modules
 
 // Import NPM modules
 @import "../../../../../node_modules/totem*/stylesheets/shared/**"; // Root: ./totem
@@ -31,6 +27,10 @@
 // Import GIT modules
 @import "../../../../../../totem_submodules/totem*/stylesheets/shared/**"; // Root: ./totem
 @import "../../../totem_submodules/totem*/stylesheets/shared/**"; // Root:  ./totem/node_modules && ./totem/../totem_submodules
+// Import project modules
+@import "../../../modules/*/stylesheets/shared/**"; // Root: ./totem
+@import "../../../totem/src/resources/modules/*/stylesheets/shared/**"; // Root: ./totem../totem_submodules
+@import "../../../src/resources/modules/*/stylesheets/shared/**"; // Root: ./totem/node_modules
 
 // Import local styles
 @import "shared/**";
@@ -51,10 +51,6 @@
 @import "../../../totem/src/resources/main/stylesheets/helpers/**"; // Root: ./totem../totem_submodules
 @import "../../../src/resources/main/stylesheets/helpers/**"; // Root: ./totem/node_modules
 
-// Import project modules
-@import "../../../modules/*/stylesheets/helpers/**"; // Root: ./totem
-@import "../../../totem/src/resources/modules/*/stylesheets/helpers/**"; // Root: ./totem../totem_submodules
-@import "../../../src/resources/modules/*/stylesheets/helpers/**"; // Root: ./totem/node_modules
 
 // Import NPM modules
 @import "../../../../../node_modules/totem*/stylesheets/helpers/**"; // Root: ./totem
@@ -63,6 +59,10 @@
 // Import GIT modules
 @import "../../../../../../totem_submodules/totem*/stylesheets/helpers/**"; // Root: ./totem
 @import "../../../totem_submodules/totem*/stylesheets/helpers/**"; // Root:  ./totem/node_modules && ./totem/../totem_submodules
+// Import project modules
+@import "../../../modules/*/stylesheets/helpers/**"; // Root: ./totem
+@import "../../../totem/src/resources/modules/*/stylesheets/helpers/**"; // Root: ./totem../totem_submodules
+@import "../../../src/resources/modules/*/stylesheets/helpers/**"; // Root: ./totem/node_modules
 
 // Import local styles
 @import "helpers/**";
@@ -83,10 +83,6 @@
 @import "../../../totem/src/resources/main/stylesheets/settings/**"; // Root: ./totem../totem_submodules
 @import "../../../src/resources/main/stylesheets/settings/**"; // Root: ./totem/node_modules
 
-// Import project modules
-@import "../../../modules/*/stylesheets/settings/**"; // Root: ./totem
-@import "../../../totem/src/resources/modules/*/stylesheets/settings/**"; // Root: ./totem../totem_submodules
-@import "../../../src/resources/modules/*/stylesheets/settings/**"; // Root: ./totem/node_modules
 
 // Import NPM modules
 @import "../../../../../node_modules/totem*/stylesheets/settings/**"; // Root: ./totem
@@ -95,6 +91,10 @@
 // Import GIT modules
 @import "../../../../../../totem_submodules/totem*/stylesheets/settings/**"; // Root: ./totem
 @import "../../../totem_submodules/totem*/stylesheets/settings/**"; // Root:  ./totem/node_modules && ./totem/../totem_submodules
+// Import project modules
+@import "../../../modules/*/stylesheets/settings/**"; // Root: ./totem
+@import "../../../totem/src/resources/modules/*/stylesheets/settings/**"; // Root: ./totem../totem_submodules
+@import "../../../src/resources/modules/*/stylesheets/settings/**"; // Root: ./totem/node_modules
 
 // Import local styles
 @import "settings/**";
@@ -115,10 +115,6 @@
 @import "../../../totem/src/resources/main/stylesheets/tools/**"; // Root: ./totem../totem_submodules
 @import "../../../src/resources/main/stylesheets/tools/**"; // Root: ./totem/node_modules
 
-// Import project modules
-@import "../../../modules/*/stylesheets/tools/**"; // Root: ./totem
-@import "../../../totem/src/resources/modules/*/stylesheets/tools/**"; // Root: ./totem../totem_submodules
-@import "../../../src/resources/modules/*/stylesheets/tools/**"; // Root: ./totem/node_modules
 
 // Import NPM modules
 @import "../../../../../node_modules/totem*/stylesheets/tools/**"; // Root: ./totem
@@ -127,6 +123,10 @@
 // Import GIT modules
 @import "../../../../../../totem_submodules/totem*/stylesheets/tools/**"; // Root: ./totem
 @import "../../../totem_submodules/totem*/stylesheets/tools/**"; // Root:  ./totem/node_modules && ./totem/../totem_submodules
+// Import project modules
+@import "../../../modules/*/stylesheets/tools/**"; // Root: ./totem
+@import "../../../totem/src/resources/modules/*/stylesheets/tools/**"; // Root: ./totem../totem_submodules
+@import "../../../src/resources/modules/*/stylesheets/tools/**"; // Root: ./totem/node_modules
 
 // Import local styles
 @import "tools/**";
@@ -147,10 +147,6 @@
 @import "../../../totem/src/resources/main/stylesheets/properties/**"; // Root: ./totem../totem_submodules
 @import "../../../src/resources/main/stylesheets/properties/**"; // Root: ./totem/node_modules
 
-// Import project modules
-@import "../../../modules/*/stylesheets/properties/**"; // Root: ./totem
-@import "../../../totem/src/resources/modules/*/stylesheets/properties/**"; // Root: ./totem../totem_submodules
-@import "../../../src/resources/modules/*/stylesheets/properties/**"; // Root: ./totem/node_modules
 
 // Import NPM modules
 @import "../../../../../node_modules/totem*/stylesheets/properties/**"; // Root: ./totem
@@ -159,6 +155,10 @@
 // Import GIT modules
 @import "../../../../../../totem_submodules/totem*/stylesheets/properties/**"; // Root: ./totem
 @import "../../../totem_submodules/totem*/stylesheets/properties/**"; // Root:  ./totem/node_modules && ./totem/../totem_submodules
+// Import project modules
+@import "../../../modules/*/stylesheets/properties/**"; // Root: ./totem
+@import "../../../totem/src/resources/modules/*/stylesheets/properties/**"; // Root: ./totem../totem_submodules
+@import "../../../src/resources/modules/*/stylesheets/properties/**"; // Root: ./totem/node_modules
 
 // Import local styles
 @import "properties/**";
